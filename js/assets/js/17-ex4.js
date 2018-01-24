@@ -66,6 +66,7 @@ var submit = document.getElementById('submit');
 var age = document.getElementById('age');
 var ageError = document.getElementsByClassName('ageError');
 var email = document.getElementById('email');
+var mdp = document.getElementById('mdp');
 var bienvenue = document.getElementById('Bienvenue');
 
 var pseudoOk = false;
@@ -100,9 +101,7 @@ function verificationAge () {
     for (let i = 0 ; i < membres.length ; i++) {
         
         if(age.value >= 18) {
-
-            // -- J'ai trouvé une correspondance donc affichage class
-            // Pseudo Error        
+             
         }
         else{
             submit.disabled = true;
@@ -120,21 +119,43 @@ function verificationAge () {
 pseudo.addEventListener('input',verificationP);
 age.addEventListener('change',verificationAge);
 // age.addEventListener('change',verificationAge);
+console.log(submit.value);
+console.log(email.value);
+
+// fonction alert liste des membres
+function listeU () {
+    '<li>'
+    for (i=0; i<membres.length; i++) {
+        membres[i].pseudo;
+    }
+    '</li>'
+}
+
 
 
 // inscrire le nouveau membre
-// --->créer un nouvel objet
 
-var nouveau = {};
-nouveau.pseudo = pseudo.value;
-allinfo.push(nouveau);
-console.log(nouveau);
+submit.addEventListener('click', function (){
+    // test affichage valeur champs au clic
+    alert(
+        "Bienvenue parmis nous " + pseudo.value
+    );
+    // définition de variables à appeler dans le push
+    let pseudoU = pseudo.value;
+    let emailU = email.value;
+    let mdpU = mdp.value;
+    
+    membres.push ({'pseudo': pseudoU, 'age' : age.value, 'email' : emailU, 'mdp' : mdpU});
+    
+    alert('Voici la liste des membres' + listeU());
 
-membres.push({
-    pseudo : pseudo.value;
-})
-/* ---->le remplir si pseudoOk et ageOk sont vraies */
+});
 
-if (ageOk == true && pseudoOk == true) {
-    membres.push(nouveau);
-}
+console.log(membres);
+
+
+/* CONDITIONS DE CONTROLE DE L'inscription gràce à deux boléens */
+
+// if (ageOk == true && pseudoOk == true) {
+    
+// }
