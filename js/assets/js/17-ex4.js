@@ -101,7 +101,8 @@ function verificationAge () {
     for (let i = 0 ; i < membres.length ; i++) {
         
         if(age.value >= 18) {
-             
+            submit.disabled = false;
+            ageError[0].style.display = 'none';
         }
         else{
             submit.disabled = true;
@@ -113,49 +114,67 @@ function verificationAge () {
 }
 
 
-// FONCTION VERIFICATION AGE
 
-// J'écoute la saisie de l'utilisateur et envoi les fonctions correspondantes
+
+// ECOUTE SAISIE
 pseudo.addEventListener('input',verificationP);
 age.addEventListener('change',verificationAge);
 // age.addEventListener('change',verificationAge);
 console.log(submit.value);
 console.log(email.value);
 
-// fonction alert liste des membres
+// FONCTION LISTE MEMBRE
+function w(e) {document.write(e);}
+
 function listeU () {
-    '<li>'
+    w('Voici la liste des membres : ')
+    w('<ul>');
     for (i=0; i<membres.length; i++) {
-        membres[i].pseudo;
+        w('<li> '); 
+        w(membres[i].pseudo); 
+        w(' </li>');
     }
-    '</li>'
+    w('</ul>');
 }
 
+// REECRITURE DES PARAMETRES DU FORMULAIRE
+var form = document.getElementById ('InscriptionForm');
+form.action = "#"
 
 
-// inscrire le nouveau membre
+// INSCRIPTION AU CLICK DU SUBMIT
 
 submit.addEventListener('click', function (){
-    // test affichage valeur champs au clic
-    alert(
-        "Bienvenue parmis nous " + pseudo.value
-    );
+        
     // définition de variables à appeler dans le push
     let pseudoU = pseudo.value;
     let emailU = email.value;
     let mdpU = mdp.value;
     
+
     membres.push ({'pseudo': pseudoU, 'age' : age.value, 'email' : emailU, 'mdp' : mdpU});
     
-    alert('Voici la liste des membres' + listeU());
+    let listeMembres = listeU();
+
+    alert(
+        "Bienvenue parmis nous " + pseudo.value
+    );
+    
+    // alert('Voici la liste des membres ' + listeMembres +;
 
 });
 
 console.log(membres);
 
 
-/* CONDITIONS DE CONTROLE DE L'inscription gràce à deux boléens */
+// pourquoi Age est un string???
 
-// if (ageOk == true && pseudoOk == true) {
-    
+// FONCTION ENVOI UTILISATEUR au SUBMIT FORMULAIRE
+
+// form.addEventListener('submit', function(event)) {
+//     event.preventDefault(); //stop la redirection HTTP du formulaire evite la reecriture
+//     let membre = { 'pseudo': pseudo.value,'age':age.value,'email':email.value,'mdp':mdp.value};
+//     membres.push(membre);
+//     var p = document.createElement('p');
 // }
+
