@@ -1,0 +1,36 @@
+.row{
+    height: 100vh;
+}
+
+.row.photo{
+    height:50vh;
+}
+
+footer.row{
+    height: 20vh;
+}
+
+nav.col-12{
+    position: absolute;
+    top:0;
+}
+nav.col-12{
+    background : rgba(255, 198, 30, 0.502) ;
+    padding : 3vh 0;
+}
+
+.nav  li{
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+
+.projecteur{
+    object-fit: cover;
+}
+
+
+
+footer{
+    background: rgb(255, 198, 30);
+}

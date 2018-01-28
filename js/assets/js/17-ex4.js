@@ -164,6 +164,11 @@ submit.addEventListener('click', function (){
 
 });
 
+
+
+
+
+
 console.log(membres);
 
 
