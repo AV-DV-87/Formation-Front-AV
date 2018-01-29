@@ -14,15 +14,14 @@ $(function(){
         e.preventDefault();
         // va cacher le formulaire en 500 ms
         $('form').hide(500);
-        $("#submit").click(function(){
-        
-        })
-        var utilisateur = $('#nomcomplet').val();
         
         // vérifier si la variable récupère la valeur de l'input
-        console.log('done');
+        $('<p>Bonjour ' + $('#nomcomplet').val() + '</p>').appendTo('body');
 
-        $('<p>Bonjour ' + utilisateur + '</p>').appendTo('body');
+        // $(this).replaceWith('<p>Bonjour ' + $('#nomcomplet') + '!</p>);
+        // permet de remplacer l'élément dans lequel on execute cette fonction this est la balise form
+        // dans cette exemple et le form est supprimé du done et ne peut plus être appellé 
+        
       });
 
 });
