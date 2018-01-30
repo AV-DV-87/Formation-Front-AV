@@ -113,7 +113,7 @@ $(() => {
             }).get();
             console.log(tblU);
             // rechercher la valeur de l'email dans le tableau avec LODASH
-            _.find(tblU, [email=email.val()], [fromIndex=0]);
+            _.find(tblU, email.val() == email);
             
             // // essai 1
             // let result = $.inArray("vallette.arnaud@gmail.com",tblU);
