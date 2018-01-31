@@ -19,3 +19,65 @@ CONSIGNE :
     
     
 */
+$(function(){
+
+    // récupérer le JSON, attention appeler le JSON plutôt à l'intérieur de l'event
+    $.getJSON('https://jsonplaceholder.typicode.com/users', function(contact) {
+        console.log(contact);
+        // événément keyup à surveiller pour la recherche
+        $('#search').on('input',function(){
+        // possible de remplacer par DeBounce fonction Lodash sur on('input')
+            
+            // récupérer la valeur du champs de recherche
+            var recherche = $('#search').val();
+            console.log(recherche);            
+            // fonction de recherche
+            $.each(contact, function(i, v) {
+                $('div.membre').hide();
+                // fonction empty pour vider les résultats avant d'afficher les nouveaux
+                // formatage des données
+                // var username = new RegExp('$(v.username)', 'gi');
+                
+                // le if peut aussi contenir les RegEx
+                if (recherche === v.username || recherche === v.name || recherche === v.email || recherche === v.phone) {
+                    $(`
+                        <div class="membre">
+                            <div class="membre_informations">
+                                <p>Nom Complet : ${v.name}</p>
+                                <p>Username : ${v.username}</p>
+                                <p>Email : ${v.email}</p>
+                                <p>Téléphone : ${v.phone}</p>
+                            </div>
+                        </div>
+                    `).appendTo('div.resultat');
+                    return false;
+                } //fin du IF
+                
+            });
+            
+            // for (var i=0; i<contact.length; i++) {
+            //     var username = contact[i].username;
+            //     console.log(username);
+            //     if (recherche == username) {
+            //       $('<p>OK</p>').appendTo('resultat'); 
+                    
+            //     }; //FIN DE IF
+            // }; //END OF FOR
+        }); //END OF KEYUP
+    }) //END DE GETJSON
+}); //END JQUERY
+
+
+
+
+// // Afficher les contacts dans une structure HTML dans div class resultat
+// $(`
+//     <div class="membre">
+//         <div class="membre_informations">
+//             <p>Nom Complet : ${contact[1].name}</p>
+//             <p>Username : ${contact[1].username}</p>
+//             <p>Email : ${contact[1].email}</p>
+//             <p>Téléphone : ${contact[1].phone}</p>
+//         </div>
+//     </div>
+// `).appendTo('div.resultat');
