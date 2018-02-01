@@ -1,0 +1,39 @@
+/* réglage container sans padding */
+.container-fluid{
+    padding:0px;
+}
+
+
+/* perosnnalisation de la navigation */
+
+
+nav ,#nav{
+    background: #1e1e1e;
+}
+
+.navbar-nav > li {
+    font-size: 125%;
+    margin: 5px 5px; 
+}
+
+/* header secondaire */
+
+.header2nd{
+    background: #141414;
+}
+
+/* section slider */
+#slider{
+    background: #000000;
+}
+
+/* contact */
+#contact{
+    background: #000000;
+}
+
+
+/* footer */
+footer {
+    height:72px;
+}
