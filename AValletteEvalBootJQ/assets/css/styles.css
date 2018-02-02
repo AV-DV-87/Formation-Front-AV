@@ -1,0 +1,57 @@
+/*----------------------  éléments généraux ----------------------  */
+.container-fluid {
+    padding: 0px;
+}
+
+h1{
+    color: #FFF;
+    font-family: 'Merienda', cursive;
+}
+
+h2{
+    color: #2F4073;
+    font-family: 'Merienda', cursive;
+}
+
+/*------------------------- différentes div de la page ---------------------- */
+nav {
+    background: #061339;
+}
+
+#slogan {
+    background: #B9CDFF;
+    background-image: url("../img/background.jpg");
+    background-repeat: repeat-x;
+    height: 288px;
+}
+
+.shadow{
+    text-shadow: 2px 2px 2px black;
+}
+
+
+textarea.form-control {
+    height: 100%;
+  }
+
+#chatInfo {
+    background: #dddddd;
+}
+
+#logochat {
+    background: #7885A5;
+    padding: 0;
+}
+#imglogochat{
+    height: auto;
+    width: 100%;
+}
+/* changement de la couleur du fond du chat au survol de sa section en 3s */
+#chatInfo:hover > div #logochat {
+    background: #061339;
+    transition-duration: 3s;
+}
+
+footer{
+    background: #061339;
+}

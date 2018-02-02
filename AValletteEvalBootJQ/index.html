@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Encodage pour les accents -->
+        <meta charset="UTF-8">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <!-- Titre de la Page -->
+        <title>OhMyCats !</title>
+
+        <!-- Pour Internet Explorer : S'assurer qu'il utilise la dernière version du moteur de rendu -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- Affichage sans zoom pour les mobiles -->
+        <meta name="viewport" content="width=device-width, init-scale=1">
+
+        <!--intégration de la bibliotheque d'icones fontawesome-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+        <!-- Bootstrap CSS v4.0 attention CDN connexion internet requise -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- Police Google titre -->
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+
+        <!-- Styles CSS -->
+        <link rel="stylesheet" href="./assets/css/styles.css">
+
+    </head>
+    <body>
+        <main class="container-fluid">
+            <header>
+                <!-- centre le titre verticalement gràce à un padding sur l'axe y py-2 rem -->
+                <nav class="col py-2">
+                    <h1 class="text-white">OhMyCats !</h1>
+                </nav>
+
+                <!-- div avec le slogan centré verticalement et horizontalement avec display flex -->
+                <div id="slogan" class="col d-flex justify-content-center align-items-center">
+                    <h2 class="text-white text-center shadow">Adoptez un chat trop bon !</h2>
+                </div>
+            </header>
+            
+            <section id="chatAAdopt" class="col">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <aside class="col-lg-3 my-5">
+                        <h2>Les chats à adopter</h2>
+                        <!-- emplacement du formulaire selection + raison adoption -->
+                        <form id="form-adopt" action="traitement.php">
+                            
+                            <div class="form-group">
+                                <label for="nameChat">Raison d'adoption :</label>
+                                <select id="nameChat" class="form-control" type="text">
+                                        <option selected class="defaut">Choix du chat</option>
+                                        <option>Sushi</option>
+                                        <option>Maki</option>
+                                        <option>Sashimi</option>
+                                        <option>Yakitori</option>
+                                        <option>Onigri</option>
+                                </select>
+                            </div>
+                            <!-- zone de saisie message avec une hauteur par default -->
+                            <div class="form-group">
+                                <label for="raisonAdopt">Choix du chat :</label>
+                                <!-- rows defini une hauteur par défaut du champs de saisie text -->
+                                <textarea type="text" class="form-control" id="raisonAdopt" rows="10" 
+                                placeholder="Saisissez ici les raisons pour lesquelles vous souhaitez adopter ce chat..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Envoyer</button>
+                        </form>
+                    </aside>
+
+                    <!-- carrousel de chats en bootstrap avec 5 slides  -->
+                    <!-- passage devant le aside grâce à order first en partant de sa position d'origine 2 -->
+                    <div id="carousel" class="col-lg-5 my-5 order-first order-lg-2">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="./assets/img/chat_1.jpg" alt="Premier chat noir et blanc">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="./assets/img/chat_2.jpg" alt="Second slide un bébé chat">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="./assets/img/chat_3.jpg" alt="Troisieme slide un chat tigré">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="./assets/img/chat_4.jpg" alt="Quatrieme slide un chat roux et blanc">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="./assets/img/chat_5.jpg" alt="Cinquieme slide un chat à poil long">
+                                </div>
+                                
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Précédent</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Suivant</span>
+                            </a>
+                        </div>
+                    </div> <!-- fin du carousel -->
+                </div>  <!-- fin du rang -->
+            </section>
+            <!-- section article et logo -->
+            <section id="chatInfo" class="col">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <article class="col-md-6 mt-5 col-xs-12">
+                        <h2>Nos chats à adopter</h2>
+                        <p>Sed quid est quod in hac causa maxime homines admirentur et reprehendant meum consilium, cum ego idem antea multa decreverim, que magis ad hominis dignitatem quam ad rei publicae necessitatem pertinerent? Supplicationem quindecim dierum decrevi sententia mea. Rei publicae satis erat tot dierum quot C. Mario ; dis immortalibus non erat exigua eadem gratulatio quae ex maximis bellis. Ergo ille cumulus dierum hominis est dignitati tributus.
+                        Haec igitur prima lex amicitiae sanciatur, ut ab amicis honesta petamus, amicorum causa honesta faciamus, ne exspectemus quidem, dum rogemur; studium semper adsit, cunctatio absit; consilium vero dare audeamus libere. Plurimum in amicitia amicorum bene suadentium valeat auctoritas, eaque et adhibeatur ad monendum non modo aperte sed etiam acriter, si res postulabit, et adhibitae pareatur.</p>
+                    </article>
+                    <div id="logochat" class="col-md-2 col-xs-12">
+                        <img id="imglogochat" class="img-fluid" src="./assets/img/tete-chat.png" alt="logo tete de chat">
+                    </div>
+                </div>
+            </section>
+
+            <footer class="col p-2 d-flex justify-content-end">
+                    <p class="text-white m-0"><i class="far fa-copyright"></i> OhMyCats</p>
+            </footer>
+        </main>
+        <!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap JS + popper qui est compris dans la V4 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- JS perso -->
+        <script src="assets/js/chat.js"></script>    
+    </body>
+</html>

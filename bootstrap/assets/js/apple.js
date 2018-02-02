@@ -25,7 +25,8 @@ var validateTel = tel => {
 
 
 $(function() {
-    alert('yeah right');
+    // // alert pour vérifier le lancement de Jquery
+    // alert('yeah right');
     $('#form-info').on('submit', function(e) {
         e.preventDefault();
         // effacer les mises en formes des précédents submit
