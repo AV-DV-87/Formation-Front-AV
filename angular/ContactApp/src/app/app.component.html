@@ -3,9 +3,11 @@
     <nav class="navbar navbar-inverse">
       <div class="navbar-header">
         <a href="/" class="navbar-brand">
-          <!-- affiche le contenu d'une variable-->
-          {{title}}
-        </a></div>
+          <!-- Avec l'expression {{ }} j'affiche le contenu
+          de la variable dans l'application -->
+          {{ title }}
+        </a>
+      </div>
     </nav>
   </header>
   <div class="row">
@@ -16,23 +18,14 @@
               (click)="choisirContact(contact)"
               [class.active]="contact === contactActif"
               class="list-group-item">
-              {{contact.name}}
+            {{ contact.name }}
           </li>
         </ul>
       </div>
+      <app-ajouter (unContactEstCree)="ajouterContactDansListe($event)"></app-ajouter>
     </div>
     <div class="col-sm-8">
-      <div class="jumbotron" *ngIf="contactActif">
-        <h2>{{contactActif.name}}
-        <small>{{contactActif.username}}</small></h2>
-        <input type="text" class="form-control">
-
-      </div>
-      <div class="jumbotron" *ngIf="!contactActif">
-        <span class="glyphicon glyphicon-hand-left"></span>
-        <h2>Bienvenue choisis un contact !</h2>
-
-      </div>
+      <app-profil [contact]="contactActif"></app-profil>
     </div>
   </div>
   <footer class="text-center">

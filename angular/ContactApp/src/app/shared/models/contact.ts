@@ -1,4 +1,3 @@
-//déclaration d'une class
 export class Contact {
   id: number;
   name: string;
