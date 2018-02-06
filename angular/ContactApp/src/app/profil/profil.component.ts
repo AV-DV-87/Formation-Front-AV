@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Contact} from '../shared/models/contact';
+import {Contact} from '../shared/models/Contact';
+
 
 @Component({
   selector: 'app-profil',
