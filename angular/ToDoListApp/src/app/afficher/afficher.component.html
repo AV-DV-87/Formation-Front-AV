@@ -1,0 +1,9 @@
+<ul id="sortable" class="list-unstyled">
+  <li class="ui-state-default" *ngFor="let tache of mesTaches ">
+
+    <div class="checkbox">
+      <label>
+        <input *ngIf="!tache.completed"  type="checkbox" value="" />{{ tache.title }}</label>
+    </div>
+  </li>
+</ul>
